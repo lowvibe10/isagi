@@ -2,7 +2,7 @@
 let dan = 2;
 let num = 1;
 
-whille (dan <= 9) {
+whille (dan <= 9); {
     num = 1;
     console.log(`${dan}단`);
     while (num <= 9) {

@@ -1,0 +1,43 @@
+let snacks = ["치즈 토스트", "딸기 에이드", "초코 쿠키"];
+
+const getRandomNumber = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+document.getElementById("btn_event").onclick = function () {
+    const num = getRandomNumber(0, snacks.length - 1);
+    document.getElementById("event_result").textContent = 
+        `오늘의 간식은 ${snacks[num]}입니다!`;
+};
+
+const renderSnack = function (snack) {
+    // TODO :: 입력받은 간식 이름을 ul 내에 li로 추가한다
+    const li = document.createElement("li");
+    li.textContent = snack;
+    document.getElementById("menu_list").appendChild(li);
+};
+
+const addSnack = function (snack) {
+    // alert(snack);
+    // TODO :: 입력받은 이름이 빋어있으면 false,
+    // 그렇지 않으면 snacks 배열에 추가 후 true 반환
+    if (snack) {
+        snacks.push(snack)
+        return true
+    }
+
+    return false
+};
+
+for (let i = 0; i < snacks.length; i++) {
+    renderSnack(snacks[i]);
+}
+
+document.getElementById("btn_odd").onclick = function () {
+    const snack = document.getElementById("input_snack").value;
+    if (addSnack(snack)) {
+        renderSnack(snack)
+    } else {
+        alert("간식 이름을 입력해주세요.");
+    }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼입니다.</button>
+</body>
+<script>
+    const first = function () {
+        alert("First Click");
+    }
+    const second = function () {
+        alert("First Click");
+    }
+    document.getElementById("btn").onclick = second
+    btn.addEvantListener("click", first);
+    btn.addEvantListener("click", second);
+</script>
+</html>
+# 나중에 친구들에게 물어보기(이유 = 놓치고 물어보면 수업 방해 될 수 있기 때문에)
